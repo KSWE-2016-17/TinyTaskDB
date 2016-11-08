@@ -1,19 +1,26 @@
 
 # TinyTask Mongoose Schema
 
+## Prerequisites
+
+```
+npm init
+npm install mongoose
+```
+
 ## Install
 
 ```
 npm install git+https://github.com/KSWE-2016-17/TinyTaskDB
 ```
 
-This will install the TinyTask Schema Module and all its dependencies to your project. 
+This will install the TinyTask schema module to your project. 
 
 ## Example usage
 
 ```javascript
 var mongoose = require("mongoose");
-var TinyTaskDB = require("./index");
+var TinyTaskDB = require("tinytaskdb");
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/test');
