@@ -1,0 +1,22 @@
+{
+  "name": "tinytaskdb",
+  "version": "1.0.0",
+  "description": "TinyTask DB module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://cemizm@github.com/KSWE-2016-17/TinyTaskDB.git"
+  },
+  "author": "Cem Basoglu <cem.basoglu@web.de> (http://github.com/cemizm)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KSWE-2016-17/TinyTaskDB/issues"
+  },
+  "homepage": "https://github.com/KSWE-2016-17/TinyTaskDB#readme",
+  "dependencies": {
+    "mongoose": "^4.6.6"
+  }
+}
