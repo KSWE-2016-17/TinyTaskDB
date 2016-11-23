@@ -9,13 +9,23 @@ var userSchema = Schema({
     displayName: String,
     picture: String,
     address: String,
-    ratings: [{
-        task: {type: Number, ref: 'Task'},
-        isExecutor: Boolean,
-        value: Number,
-        comment: String,
-    }],
 });
+
+var ratingSchema = Schema({
+    _id: String,
+    assignedTo: {type: String, ref: 'User'},
+    task: {type: Number, ref: 'Task'},
+    isExecutor: Boolean,
+    value: Number,
+    comment: String,
+});
+                          
+var applicationSchema = Schema({
+    _id: String,
+    user: {type: String, ref: 'User'},
+    task: {type: Number, ref: 'Task'},                    
+    comment: String,
+});                         
 
 var taskSchema = Schema({
     _id: Number,
@@ -30,10 +40,6 @@ var taskSchema = Schema({
     },
     starts: {type: Date, default: Date.now},
     category: String,
-    applications: [{
-        user: {type: String, ref: 'User'},
-        comment: String
-    }],
 });
 
 taskSchema.methods.test = function () {
@@ -43,4 +49,6 @@ taskSchema.methods.test = function () {
 module.exports = {
     Task: mongoose.model('Task', taskSchema),
     User: mongoose.model('User', userSchema),
+    Application: mongoose.model('Application', applicationSchema),
+    Rating: mongoose.model('Rating', ratingSchema),
 };
