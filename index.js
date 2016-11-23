@@ -16,16 +16,16 @@ var ratingSchema = Schema({
     assignedTo: {type: String, ref: 'User'},
     task: {type: Number, ref: 'Task'},
     isExecutor: Boolean,
-    value: Number,
+    value: Boolean,
     comment: String,
 });
-                          
+
 var applicationSchema = Schema({
     _id: String,
     user: {type: String, ref: 'User'},
-    task: {type: Number, ref: 'Task'},                    
+    task: {type: Number, ref: 'Task'},
     comment: String,
-});                         
+});
 
 var taskSchema = Schema({
     _id: Number,
