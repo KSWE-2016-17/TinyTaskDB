@@ -14,7 +14,7 @@ var userSchema = Schema({
 
 var ratingSchema = Schema({
     assignedTo: {type: String, ref: 'User'},
-    task: {type: ObjectId, ref: 'Task'},
+    task: {type: Schema.Types.ObjectId, ref: 'Task'},
     isExecutor: Boolean,
     value: Boolean,
     comment: String,
@@ -22,7 +22,7 @@ var ratingSchema = Schema({
 
 var applicationSchema = Schema({
     user: {type: String, ref: 'User'},
-    task: {type: ObjectId, ref: 'Task'},
+    task: {type: Schema.Types.ObjectId, ref: 'Task'},
     comment: String,
 });
 
