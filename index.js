@@ -13,23 +13,20 @@ var userSchema = Schema({
 });
 
 var ratingSchema = Schema({
-    _id: String,
     assignedTo: {type: String, ref: 'User'},
-    task: {type: String, ref: 'Task'},
+    task: {type: ObjectId, ref: 'Task'},
     isExecutor: Boolean,
     value: Boolean,
     comment: String,
 });
 
 var applicationSchema = Schema({
-    _id: String,
     user: {type: String, ref: 'User'},
-    task: {type: String, ref: 'Task'},
+    task: {type: ObjectId, ref: 'Task'},
     comment: String,
 });
 
 var taskSchema = Schema({
-    _id: String,
     createdBy: {type: String, ref: 'User'},
     assignedTo: {type: String, ref: 'User'},
     name: String,
