@@ -43,10 +43,6 @@ var taskSchema = Schema({
     category: String,
 });
 
-taskSchema.methods.test = function () {
-    console.log("test");
-}
-
 module.exports = {
     Task: mongoose.model('Task', taskSchema),
     User: mongoose.model('User', userSchema),
